@@ -4,6 +4,17 @@ using UnityEngine;
 
 public static class VectorExtension
 {
+    #region Vector3 Math
+    public static Vector2 Abs(this Vector3 _vector3)
+    {
+        float x = Mathf.Abs(_vector3.x);
+        float y = Mathf.Abs(_vector3.y);
+        float z = Mathf.Abs(_vector3.z);
+        return new Vector3(x, y, z);
+    }
+    #endregion
+
+
     #region Vector2 RotateAroundPivot
     public static Vector2 RotateAroundPivot(this Vector2 _vector2, Vector2 pivot, float angle)
     {
@@ -79,6 +90,14 @@ public static class VectorExtension
         float y = Mathf.Round(_vector3.y);
         float z = Mathf.Round(_vector3.z);
         return new Vector3(x, y, z);
+    }
+
+    public static Vector3Int sad(this Vector3 _vector3)
+    {
+        int x = Mathf.RoundToInt(_vector3.x);
+        int y = Mathf.RoundToInt(_vector3.y);
+        int z = Mathf.RoundToInt(_vector3.z);
+        return new Vector3Int(x, y, z);
     }
 
     public static Vector3 Mod(this Vector3 _vector3, Vector3 vector)

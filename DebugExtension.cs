@@ -245,6 +245,14 @@ public static class Debug
         }
     }
 
+    static public void DrawBox(Vector3 point, float size, float angle, Color color, float duration = 0.0F, bool depthTest = true)
+    {
+        if (IsEnable())
+        {
+            DrawBox(point, new Vector2(size, size), angle, color, duration, depthTest);
+        }
+    }
+
     static public void DrawCircle(Vector3 point, float radius, Color color, float duration = 0.0F, int segments = 16, bool depthTest = true)
     {
         Vector3 radiusArm = new Vector3(point.x, point.y + radius / 2, point.z);
