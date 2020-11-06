@@ -92,7 +92,7 @@ public static class VectorExtension
         return new Vector3(x, y, z);
     }
 
-    public static Vector3Int sad(this Vector3 _vector3)
+    public static Vector3Int RoundToInt(this Vector3 _vector3)
     {
         int x = Mathf.RoundToInt(_vector3.x);
         int y = Mathf.RoundToInt(_vector3.y);
@@ -227,6 +227,13 @@ public static class VectorExtension
         float x = Mathf.Round(_vector2.x);
         float y = Mathf.Round(_vector2.y);
         return new Vector2(x, y);
+    }
+
+    public static Vector2Int RoundToInt(this Vector2 _vector2)
+    {
+        int x = Mathf.RoundToInt(_vector2.x);
+        int y = Mathf.RoundToInt(_vector2.y);
+        return new Vector2Int(x, y);
     }
 
     public static Vector2 RoundToClosest(this Vector2 _vector2, Vector2 closest)
