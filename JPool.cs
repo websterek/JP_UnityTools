@@ -66,7 +66,7 @@ public class JPool<T> : MonoBehaviour where T : MonoBehaviour, IJPool
                     pooledObj = InstantiatePrefab();
                     break;
 
-                case EndMode.Loop: //TODO: repair this shiet
+                case EndMode.Loop: //BUG: repair this shit
                     pooledObj = null;
                     break;
 

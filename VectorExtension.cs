@@ -4,17 +4,6 @@ using UnityEngine;
 
 public static class VectorExtension
 {
-    #region Vector3 Math
-    public static Vector2 Abs(this Vector3 _vector3)
-    {
-        float x = Mathf.Abs(_vector3.x);
-        float y = Mathf.Abs(_vector3.y);
-        float z = Mathf.Abs(_vector3.z);
-        return new Vector3(x, y, z);
-    }
-    #endregion
-
-
     #region Vector2 RotateAroundPivot
     public static Vector2 RotateAroundPivot(this Vector2 _vector2, Vector2 pivot, float angle)
     {
@@ -67,7 +56,15 @@ public static class VectorExtension
     #endregion
 
 
-    #region Vector3 Round
+    #region Vector3 Mathf
+    public static Vector2 Abs(this Vector3 _vector3)
+    {
+        float x = Mathf.Abs(_vector3.x);
+        float y = Mathf.Abs(_vector3.y);
+        float z = Mathf.Abs(_vector3.z);
+        return new Vector3(x, y, z);
+    }
+
     public static Vector3 Ceil(this Vector3 _vector3)
     {
         float x = Mathf.Ceil(_vector3.x);
@@ -134,7 +131,7 @@ public static class VectorExtension
     #endregion
 
 
-    #region Vector3Int Round
+    #region Vector3Int Mathf
     public static Vector3Int Ceil(this Vector3Int _vector3)
     {
         int x = Mathf.CeilToInt(_vector3.x);
@@ -193,7 +190,7 @@ public static class VectorExtension
     #endregion
 
 
-    #region Vector2 Round
+    #region Vector2 Mathf
     public static Vector2 Ceil(this Vector2 _vector2)
     {
         float x = Mathf.Ceil(_vector2.x);
@@ -249,10 +246,26 @@ public static class VectorExtension
         float y = Mathf.Round(_vector2.y / closest) * closest;
         return new Vector2(x, y);
     }
+
+    public static Vector3 Clamp(this Vector3 _vector3, Vector3 min, Vector3 max)
+    {
+        float x = Mathf.Clamp(_vector3.x, min.x, max.x);
+        float y = Mathf.Clamp(_vector3.y, min.y, max.y);
+        float z = Mathf.Clamp(_vector3.z, min.z, max.z);
+        return new Vector3(x, y, z);
+    }
+
+    public static Vector3 Clamp(this Vector3 _vector3, float min, float max)
+    {
+        float x = Mathf.Clamp(_vector3.x, min, max);
+        float y = Mathf.Clamp(_vector3.y, min, max);
+        float z = Mathf.Clamp(_vector3.z, min, max);
+        return new Vector3(x, y, z);
+    }
     #endregion
 
 
-    #region Vector2 Round
+    #region Vector2Int Mathf
     public static Vector2Int Ceil(this Vector2Int _vector2)
     {
         int x = Mathf.CeilToInt(_vector2.x);
@@ -300,6 +313,20 @@ public static class VectorExtension
         int x = Mathf.RoundToInt(_vector2.x / closest) * closest;
         int y = Mathf.RoundToInt(_vector2.y / closest) * closest;
         return new Vector2Int(x, y);
+    }
+
+    public static Vector2 Clamp(this Vector2 _vector2, Vector2 min, Vector2 max)
+    {
+        float x = Mathf.Clamp(_vector2.x, min.x, max.x);
+        float y = Mathf.Clamp(_vector2.y, min.y, max.y);
+        return new Vector2(x, y);
+    }
+
+    public static Vector2 Clamp(this Vector2 _vector2, float min, float max)
+    {
+        float x = Mathf.Clamp(_vector2.x, min, max);
+        float y = Mathf.Clamp(_vector2.y, min, max);
+        return new Vector2(x, y);
     }
     #endregion
 
